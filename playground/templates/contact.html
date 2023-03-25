@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{%block title%} contact{%endblock title%}  
+ {%block body%} <div class="container-fluid mx-2">
+    <img src="/static/img/contact1.jpeg" class="d-block w-100" alt="...">
+    <div>
+        <div class="container py-6">
+<h3 class="text-center">CONTACT US</h3>
+<form method="post" action="/contact/">
+    {% csrf_token %}
+    <div class="col-md-4">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="validationDefault01" name='name' value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="phone" class="form-label">PhoneNo</label>
+      <input type="text" class="form-control" id="validationDefault02" name='phone' value="" required>
+    </div>
+    <div class="col-md-4">
+      <label for="email" class="form-label">email</label>
+      <div class="input-group">
+        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        <input type="text" class="form-control" id="validationDefaultUsername" name='email'  aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <label for="city" class="form-label">city</label>
+      <input type="text" class="form-control" id="validationDefault03"  name='city'required>
+    </div>
+    
+    <div class="col-11">
+      <label for="feedback" class="form-label">your feedback</label>
+      <input type="text" class="form-control" id="validationDefault" name='feedback' required>
+    </div> 
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+ </div>{%endblock body %}
