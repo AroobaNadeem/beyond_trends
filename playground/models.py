@@ -8,4 +8,5 @@ class Contact(models.Model):
     city=models.CharField(max_length=30)
     feedback=models.TextField()
     date=models.DateField()
-
+    def __str__(self):
+        return self.name 

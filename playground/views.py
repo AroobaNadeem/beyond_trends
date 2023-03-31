@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from playground.models import Contact
 from datetime import datetime
+from django.contrib import messages
+
 # Create your views here.
 # Request---> Response
 #Request handler
@@ -31,6 +33,8 @@ def contact(request):
                      city=request.POST.get('city')
                      contact=Contact(name=name , email=email, phone=phone ,feedback=feedback, city=city, date=datetime.today())
                      contact.save()
+                     messages.success(request, 'Your feedback is sent!')
+
              return render(request,'contact.html')
 
     #return HttpResponse({"THIS IS CONTACT PAGE"})
